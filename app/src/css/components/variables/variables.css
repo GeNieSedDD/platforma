@@ -1,0 +1,42 @@
+:root {
+    /* onher */
+    --other-background_white-blue_block: #7094f4;
+    --other-background_violet_block: #95a4fc;
+    --other-background_blue_block: #455db4;
+    --other-background_dark-blue_block: #394c90;
+    --other-background_light-blue_block: #ebf2ff;
+    --other-backgroud_light-gray_block: #d0d5dd;
+    --other-background_red_block: #c92b2b;
+  
+    /* icon */
+    --icon-fill_black_icon: #3c3c3c;
+    --icon-fill_blue_icon: #455db4;
+    --icon-background_black_icon: #ececec;
+    --icon-background_blue_icon: #eceff7;
+    --icon-background_red_icon: #ab2d2d;
+  
+    /* card */
+    --card-background_white_fill: #ffffff;
+    --card-background_gray_fill: #fafafa;
+    --card-background_dark-gray_fill: #f2f4f7;
+  
+    /* text */
+    --text-background_black_text: #3c3c3c;
+    --text-background_gray_text: #9197b3;
+    --text-background_blue_text: #455db4;
+    --text-background_red_text: #c92b2b;
+    --text-background_black-gray_text: #5e5e5e;
+    --text-background_white_text: #ffffff;
+    --text-background_light-gray_text: #a9a9a9;
+  
+    /* padding */
+    --padding-internal-primary-card: 24px;
+    --padding-internal-secondary: 16px;
+  
+    --gap-external-primary: 24px;
+    --gap-external-secondary: 16px;
+    --gap-external-secondary-2: 12px;
+    --gap-button-primary: 40px;
+    --gap-external_card: 24px;
+  }
+  
