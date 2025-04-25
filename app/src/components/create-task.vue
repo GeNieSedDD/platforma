@@ -43,11 +43,9 @@
                 >
                   <div class="radio-label">
                     <input
-                      type="radio"
-                      :name="'question' + index"
+                      type="checkbox"
+                      v-model="answer.isCorrect"
                       :id="'answer' + index + answerIndex"
-                      v-model="questions.selectAnswer"
-                      :value="answer"
                     />
                     <label
                       for="'answer' + index + answerIndex"
@@ -59,7 +57,7 @@
                   <input
                     class="input-default texting-3"
                     type="text"
-                    v-model="answers"
+                    v-model="answer.text"
                     placeholder="Введите вариант ответа"
                     required
                   />
@@ -137,35 +135,61 @@
   </div>
 </template>
 <script setup>
-const submitTest = async () => {
-  try {
-    const test = {
-      title: title.value,
-      description: description.value,
-      img: img.value,
-      beginningDate: beginningDate.value,
-      endDate: endDate.value,
-      time: time.value,
-      groupId: selectGroup.value,
-      teacherId: user.value.id,
-      questions: questions.value.map((number) => ({
-        description: number.description,
-        img: null,
-        answers: number.answers.map((number, index) => ({
-          text: number,
-          isCorrect: number.selectAnswer === index
-        }))
-      }))
-    }
-    const res = await http.post('tests', test)
-    console.log('Успешно отправлено!', res.data)
-    alert('Тест успешно создан')
+import { ref } from 'vue'
+import navigation from "../module/navigation.vue"
+
+// Инициализация массива вопросов (первый вопрос по умолчанию)
+const questions = ref([
+  {
+    description: '',
+    answers: [
+      { text: '', isCorrect: false },
+      { text: '', isCorrect: false }
+    ]
   }
-  catch(error) {
-    console.error('Ошибка при создании теста', error)
-    alert('Не удалось создать тест')
+])
+
+// Добавить новый вопрос
+function addQuestion() {
+  questions.value.push({
+    description: '',
+    answers: [
+      { text: '', isCorrect: false },
+      { text: '', isCorrect: false }
+    ]
+  })
+}
+
+// Добавить вариант ответа к конкретному вопросу
+function addAnswer(questionIndex) {
+  questions.value[questionIndex].answers.push({ text: '', isCorrect: false })
+}
+
+// Пример функции для отправки теста (добавь свои остальные поля)
+async function submitTest() {
+  const test = {
+    // ...другие поля...
+    questions: questions.value.map(q => ({
+      description: q.description,
+      img: null,
+      answers: q.answers.map(a => ({
+        text: a.text,
+        isCorrect: a.isCorrect
+      }))
+    }))
+  }
+
+  try {
+    // Здесь твой запрос на сервер, например:
+    // await axios.post('/api/tests', test)
+    alert('Тест успешно собран! (отправка не реализована в этом примере)')
+  } catch (error) {
+    alert('Ошибка отправки')
   }
 }
+
+// Экспортируй функции если используешь их в шаблоне
+// В Vue3 с <script setup> просто объявляй функции, они будут доступны в шаблоне
 </script>
 <style scoped>
 @import "../css/components/block/buttons/button.css";

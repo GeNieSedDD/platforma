@@ -10,7 +10,7 @@ const PORT = 8080;
 
 /// 🧠 CORS — авторизация и HTTPS для Codespaces
 const corsOptions = {
-    origin: 'https://musical-succotash-5wg5wvrv677fv5pw-8081.app.github.dev',
+    origin: 'https://improved-eureka-4j6pgxxj7jrrfqr6g-8081.app.github.dev',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: false

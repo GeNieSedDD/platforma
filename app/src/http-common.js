@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://musical-succotash-5wg5wvrv677fv5pw-8080.app.github.dev/api/auth',
+    baseURL: 'https://improved-eureka-4j6pgxxj7jrrfqr6g-8080.app.github.dev/api/auth',
     headers: {
         "Content-Type": "application/json",
     }
