@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 const TEACHER_ROLE = 1;
 const STUDENT_ROLE = 2;
-
+const ADMIN_ROLE = 3;
 const teacherUsers = [
   {
     login: "Kozlov",
@@ -111,6 +111,7 @@ async function main() {
     data: [
       { id: TEACHER_ROLE, title: "Преподаватель" },
       { id: STUDENT_ROLE, title: "Студент" },
+      {id: ADMIN_ROLE, title: "Администратор"}
     ],
   });
 

@@ -1,7 +1,7 @@
 # api/Dockerfile
 FROM node:20
 
-WORKDIR /workspace/api
+WORKDIR /workspaces/plathorm/api
 
 COPY package*.json ./
 RUN npm install

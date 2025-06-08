@@ -14,7 +14,7 @@ const PORT = 8080;
 
 /// 🧠 CORS — авторизация и HTTPS для Codespaces
 const corsOptions = {
-  origin: "https://legendary-waddle-pj95gxxjrpr5366vq-8081.app.github.dev",
+  origin: "https://miniature-trout-69wjprqjqvq7f4rr5-8081.app.github.dev",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: false,
